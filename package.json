@@ -1,0 +1,26 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "Learning React",
+  "keywords": [
+    "react"
+  ],
+  "homepage": "https://github.com/aswinkumar-dj/learning-react#readme",
+  "bugs": {
+    "url": "https://github.com/aswinkumar-dj/learning-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aswinkumar-dj/learning-react.git"
+  },
+  "license": "ISC",
+  "author": "Aswinkumar",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}

@@ -15,8 +15,6 @@
   },
   "license": "ISC",
   "author": "Aswinkumar",
-  "type": "commonjs",
-  "main": "App.js",
   "scripts": {
     "test": "jest"
   },

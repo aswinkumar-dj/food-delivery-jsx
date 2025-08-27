@@ -16,6 +16,8 @@
   "license": "ISC",
   "author": "Aswinkumar",
   "scripts": {
+    "start":"parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "devDependencies": {

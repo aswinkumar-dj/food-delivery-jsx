@@ -32,3 +32,26 @@
   color: #fff;
   margin: 0 16px;
 }
+.restaurant-logo {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+}
+.restaurant-card {
+  background-color: #dccee9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 200px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 16px;
+  border: 1px solid black;
+}
+.restaurant-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.restaurant-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}

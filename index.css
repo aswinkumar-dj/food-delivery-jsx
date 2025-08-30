@@ -4,9 +4,16 @@
 .header {
   background-color: #6c3483;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
+  padding: 12px 32px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 56px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s;
 }
 .logo {
   width: 150px;
@@ -14,7 +21,6 @@
   align-items: center;
   margin: 5px;
 }
-
 .nav-items > ul {
   display: flex;
   width: 400px;

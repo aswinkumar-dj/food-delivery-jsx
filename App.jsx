@@ -123,7 +123,7 @@ const RestaurantList = (props) => {
         <h3>{resData.name}</h3>
         <h4>{resData.cuisine}</h4>
         <h4>{resData.rating} Star rating</h4>
-        <h4>{resData.deliveryTime}</h4>
+        <h5>{resData.deliveryTime}</h5>
       </div>
     </div>
   );

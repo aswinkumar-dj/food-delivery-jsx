@@ -1,13 +1,10 @@
 import React from "react";
+import { LOGO_URL } from "../utils/constants.js";
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img
-          className="logo"
-          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/static-assets/images/swiggy_logo_white.png"
-          alt="logo"
-        />
+        <img className="logo" src={LOGO_URL} alt="logo" />
       </div>
       <div className="nav-items">
         <ul>

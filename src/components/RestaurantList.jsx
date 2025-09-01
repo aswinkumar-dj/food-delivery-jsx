@@ -1,3 +1,4 @@
+import React from "react";
 const RestaurantList = (props) => {
   const { resData } = props;
 
@@ -17,3 +18,4 @@ const RestaurantList = (props) => {
     </div>
   );
 };
+export default RestaurantList;

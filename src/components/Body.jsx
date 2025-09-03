@@ -33,13 +33,19 @@ const Body = () => {
     setListOfRestaurants(restaurants);
   };
 
-  if (ListOfRestaurants.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
+  return ListOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            placeholder="Search Restaurant"
+          />
+          <button className="search-btn">Search</button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {

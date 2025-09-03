@@ -1,17 +1,51 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { useState } from "react";
-import { ResList } from "../utils/mockData.js";
+import { useState, useEffect } from "react";
+
 import RestaurantList from "./RestaurantList.jsx";
+import Shimmer from "./Shimmer.jsx";
 const Body = () => {
-  const [ListOfRestaurants, setListOfRestaurants] = useState(ResList);
+  const [ListOfRestaurants, setListOfRestaurants] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch("https://pastebin.com/raw/0QcdEDBL");
+
+    const json = await data.json();
+    console.log(json);
+    console.log(json.data.cards);
+
+    const cards = json?.data?.cards || [];
+
+    const restaurantsCard = cards.find(
+      (c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+
+    const restaurants =
+      restaurantsCard?.card?.card?.gridElements?.infoWithStyle?.restaurants ||
+      [];
+
+    console.log(restaurants);
+
+    setListOfRestaurants(restaurants);
+  };
+
+  if (ListOfRestaurants.length === 0) {
+    return <Shimmer />;
+  }
+
   return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = ResList.filter((res) => res.rating > 4);
+            const filteredList = ListOfRestaurants.filter(
+              (res) => res.info.avgRating > 4.5
+            );
             setListOfRestaurants(filteredList);
           }}
         >
@@ -19,8 +53,8 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-list-container">
-        {ListOfRestaurants.map((restaurants) => {
-          return <RestaurantList key={restaurants.id} resData={restaurants} />;
+        {ListOfRestaurants.map((res) => {
+          return <RestaurantList key={res.info.id} resData={res} />;
         })}
       </div>
     </div>

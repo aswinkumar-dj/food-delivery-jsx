@@ -16,11 +16,14 @@
   "license": "ISC",
   "author": "Aswinkumar",
   "scripts": {
-    "start":"parcel index.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
   },
   "devDependencies": {
     "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.30.1"
   }
 }

@@ -14,7 +14,9 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("https://pastebin.com/raw/0QcdEDBL");
+    const data = await fetch(
+      "https://api.allorigins.win/raw?url=https://pastebin.com/raw/0QcdEDBL"
+    );
 
     const json = await data.json();
     console.log(json);

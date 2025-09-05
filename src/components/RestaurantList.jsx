@@ -7,7 +7,7 @@ const RestaurantList = (props) => {
     <div className="restaurant-card">
       <img
         className="restaurant-logo"
-        src={"CDN_URL" + resData.info.cloudinaryImageId}
+        src={CDN_URL + resData.info.cloudinaryImageId}
         alt={resData.info.name}
       />
       <div className="restaurant-info">

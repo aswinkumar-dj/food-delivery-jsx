@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import RestaurantList from "./RestaurantList.jsx";
 import Shimmer from "./Shimmer.jsx";
+import { Link } from "react-router-dom";
+
 const Body = () => {
   const [ListOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredrestaurant] = useState([]);
@@ -79,7 +81,11 @@ const Body = () => {
       </div>
       <div className="restaurant-list-container">
         {filteredRestaurant.map((res) => {
-          return <RestaurantList key={res.info.id} resData={res} />;
+          return (
+            <Link to={"/restaurants/" + res.info.id} key={res.info.id}>
+              <RestaurantList key={res.info.id} resData={res} />
+            </Link>
+          );
         })}
       </div>
     </div>

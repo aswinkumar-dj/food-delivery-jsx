@@ -6,6 +6,10 @@
   --text-light: #555;
   --card-radius: 14px;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* Header */
 .header {

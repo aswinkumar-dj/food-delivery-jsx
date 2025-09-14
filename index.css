@@ -28,6 +28,10 @@ a {
 .logo {
   width: 140px;
 }
+.logo-container {
+  display: flex;
+  gap: 10px;
+}
 
 .nav-items {
   display: flex;

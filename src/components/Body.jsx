@@ -15,12 +15,12 @@ const Body = () => {
   return ListOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
+    <div className="body mt-5">
       <div className="filter">
-        <div className="search">
+        <div className="search ">
           <input
             type="text"
-            className="search-box"
+            className="search-box border-2 border-purple-700 rounded-lg"
             placeholder="Search Restaurant"
             value={searchText}
             onChange={(e) => {
@@ -40,7 +40,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="filter-btn border-2 border-purple-700 rounded-lg p-1 bg-purple-700 text-white font-semibold hover:bg-purple-500"
           onClick={() => {
             const filteredList = ListOfRestaurants.filter(
               (res) => res.info.avgRating > 4.5

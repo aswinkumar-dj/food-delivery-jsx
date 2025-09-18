@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { MENU_IMG } from "../utils/constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import MenuCategory from "./MenuCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -17,6 +18,15 @@ const RestaurantMenu = () => {
       .flatMap((card) => card?.groupedCard?.cardGroupMap?.REGULAR?.cards || [])
       .find((c) => Array.isArray(c?.card?.card?.itemCards))?.card?.card
       ?.itemCards || [];
+
+  const itemCategories =
+    menuData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+      (c) =>
+        c?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
+  console.log(itemCategories);
 
   if (itemCards.length === 0) {
     return (
@@ -49,34 +59,9 @@ const RestaurantMenu = () => {
         </h5>
       </div>
 
-      <ul className="menu-items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {itemCards.map((item) => {
-          const info = item.card.info;
-          return (
-            <li
-              key={info.id}
-              className="menu-item bg-white rounded-xl shadow-md hover:shadow-xl hover:shadow-purple-400 transition transform hover:-translate-y-1 cursor-pointer overflow-hidden flex flex-col"
-            >
-              <img
-                className="menu-img w-full h-40 object-cover"
-                src={MENU_IMG + info.imageId}
-                alt={info.name}
-              />
-              <div className="menu-item-text p-4 flex flex-col flex-grow space-y-2">
-                <h3 className="item-name text-lg font-semibold text-gray-900">
-                  {info.name}
-                </h3>
-                <p className="item-price text-gray-700">
-                  Price: ₹{info.price ? info.price / 100 : "N/A"}
-                </p>
-                <p className="item-description text-gray-600 text-sm">
-                  {info.description || "No description available."}
-                </p>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      {itemCategories.map((category) => (
+        <MenuCategory key={Math.random()} data={category?.card?.card} />
+      ))}
     </div>
   );
 };

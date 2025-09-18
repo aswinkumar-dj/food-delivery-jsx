@@ -30,5 +30,17 @@ const RestaurantList = (props) => {
     </div>
   );
 };
+export const withPromotedlabel = (RestaurantList) => {
+  return (props) => {
+    return (
+      <div className="relative">
+        <RestaurantList {...props} />
+        <span className="absolute top-2 left-2 bg-purple-600/30 text-white text-xs font-bold px-2 py-1 rounded">
+          OPEN
+        </span>
+      </div>
+    );
+  };
+};
 
 export default RestaurantList;

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import RestaurantList from "./RestaurantList.jsx";
+import RestaurantList, { withPromotedlabel } from "./RestaurantList.jsx";
 import Shimmer from "./Shimmer.jsx";
 import useRestaurantMenu from "../utils/useRestaurantList.jsx";
 
 const Body = () => {
   const { resData } = useParams();
   const { ListOfRestaurants, filteredRestaurant } = useRestaurantMenu(resData);
-
+  const RestaurantPromoted = withPromotedlabel(RestaurantList);
   const [searchText, setSearchText] = useState("");
   const [displayedRestaurants, setDisplayedRestaurants] = useState([]);
 
@@ -70,7 +70,11 @@ const Body = () => {
       <div className="restaurant-list-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {displayedRestaurants.map((res) => (
           <Link to={"/restaurants/" + res.info.id} key={res.info.id}>
-            <RestaurantList resData={res} />
+            {res.info.isOpen ? (
+              <RestaurantPromoted resData={res} />
+            ) : (
+              <RestaurantList resData={res} />
+            )}
           </Link>
         ))}
       </div>

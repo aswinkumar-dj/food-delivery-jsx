@@ -26,7 +26,7 @@ const MenuList = ({ items }) => {
             </span>
 
             <button
-              onClick={() => dispatch(addItem("pizza"))}
+              onClick={() => dispatch(addItem(item))}
               className="bg-purple-600/30 px-6 py-1 rounded-lg text-white hover:bg-purple-600 transition"
             >
               Add

@@ -4,7 +4,7 @@ import React from "react";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: ["Burger", "Fries"],
+    items: [],
   },
   reducers: {
     addItem: (state, action) => {

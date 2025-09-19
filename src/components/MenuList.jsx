@@ -1,7 +1,10 @@
 import React from "react";
 import { MENU_IMG } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const MenuList = ({ items }) => {
+  const dispatch = useDispatch();
   return (
     <div className="menu-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {items.map((item) => (
@@ -22,7 +25,10 @@ const MenuList = ({ items }) => {
               ₹{item.card.info.price / 100 || item.card.info.defaultPrice / 100}
             </span>
 
-            <button className="bg-purple-600/30 px-6 py-1 rounded-lg text-white hover:bg-purple-600 transition">
+            <button
+              onClick={() => dispatch(addItem("pizza"))}
+              className="bg-purple-600/30 px-6 py-1 rounded-lg text-white hover:bg-purple-600 transition"
+            >
               Add
             </button>
 

@@ -4,8 +4,9 @@ Food Delivery App is a modern web application that allows users to explore resta
 It integrates with a **location-based Food API (Mayiladuthurai)** to provide real-time restaurant and menu data.  
 Built with **React, Redux Toolkit, Tailwind CSS, and Vite**, the app delivers a fast and responsive user experience.  
 
-🌐 **Live Demo:** [Food Delivery App on Vercel](https://your-vercel-deployed-link.vercel.app)  
-📍 *Currently configured for restaurants in **Mayiladuthurai** using the API.*  
+🌐 **Live Demo:** [Food Delivery App on Vercel](https://food-delivery-jsx.vercel.app/)  
+📍 *Currently configured for restaurants in **Mayiladuthurai** using the API.*
+*Note: Sometimes, it didn't show restaurants due to live api*
 
 ---
 
